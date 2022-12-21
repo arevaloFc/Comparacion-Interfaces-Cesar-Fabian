@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react'
 import MenuBar from './components/MenuBar';
 export default function App() {
 
-  const [select, setSelect] = useState("")
+  const [ select, setSelect ] = useState("")
+
   useEffect(()=>{
     console.log(select)
   },[select])
+
   const opcion = () =>{
     
     switch(select){
@@ -18,18 +20,15 @@ export default function App() {
 
       case"Access":
         return(<Text style={styles.textOption}>ha elegido Access</Text>)
-     
-      
+
       case"Assistance":
         return(<Text style={styles.textOption}>ha elegido Drive Assistance</Text>)
       
-
       case"Valet":
         return(<Text style={styles.textOption}>ha elegido Valet</Text>)
-      
     }
-    
   }
+
   return (
     <View style={styles.container}>
       <MenuBar select={select} setSelect={setSelect}/>
@@ -41,6 +40,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     flexDirection:"row",
@@ -50,12 +50,15 @@ const styles = StyleSheet.create({
     height:"100%",
     width:"100%"
   },
+
   containerOption:{
     height:"100%",
     justifyContent:"center",
     alignItems:"center"
   },
+
   textOption:{
     color:"white"
   }
+
 });
