@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { useEffect, useState } from 'react'
 import MenuBar from './components/MenuBar';
 export default function App() {
@@ -13,19 +13,19 @@ export default function App() {
     
     switch(select){
       case"Model":
-        return(<Text style={styles.textOption}>ha elegido Models</Text>)
+        return(<Image style = { styles.iconModels } source = { require('./assets/driveModels.jpg') } />)
 
       case"Camera":
-        return(<Text style={styles.textOption}>ha elegido Camera</Text>)
+        return(<Image style = { styles.iconCamara } source = { require('./assets/camara.jpg') } />)
 
       case"Access":
-        return(<Text style={styles.textOption}>ha elegido Access</Text>)
+        return(<Image style = { styles.iconAccess } source = { require('./assets/access.jpg') } />)
 
       case"Assistance":
-        return(<Text style={styles.textOption}>ha elegido Drive Assistance</Text>)
+        return(<Image style = { styles.iconDrive } source = { require('./assets/drive.jpg') } />)
       
       case"Valet":
-        return(<Text style={styles.textOption}>ha elegido Valet</Text>)
+        return(<Image style = { styles.iconMode } source = { require('./assets/mode.jpg') } />)
     }
   }
 
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection:"row",
-    backgroundColor: '#484848',
+    backgroundColor: '#202930',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     height:"100%",
@@ -59,6 +59,30 @@ const styles = StyleSheet.create({
 
   textOption:{
     color:"white"
+  },
+
+  iconModels: {
+    width: 250,
+    height: 400
+  },
+
+  iconCamara: {
+    width: 250,
+    height: 500
+  },
+
+  iconAccess: {
+    width: 250
+  },
+
+  iconDrive: {
+    width: 250,
+    height: 300
+  },
+
+  iconMode: {
+    width: 250,
+    height: 200
   }
 
 });
